@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="MeetingMind favicon">
+  <rect width="512" height="512" rx="74" fill="#F5F5F1"/>
+  <g fill="#111111">
+    <rect x="84" y="234" width="52" height="145" rx="26"/>
+    <rect x="150" y="166" width="52" height="256" rx="26"/>
+    <rect x="214" y="92" width="84" height="388" rx="42"/>
+    <rect x="314" y="166" width="52" height="256" rx="26"/>
+    <rect x="380" y="234" width="52" height="145" rx="26"/>
+  </g>
+</svg>

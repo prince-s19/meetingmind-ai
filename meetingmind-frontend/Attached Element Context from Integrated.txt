@@ -1,0 +1,75 @@
+Attached Element Context from Integrated Browser
+
+Element: div.voice-pill
+
+URL: https://meetingmind-frontend.vercel.app/
+
+HTML Path: main.marketing-page > div > section.hero.section-shell > div.voice-trail-shell > div.voice-trail > div.voice-pill
+
+Outer HTML:
+```html
+<div class="voice-pill" style="transform: translateY(-0.1081px) rotate(0.0828982deg);"><span class="waveform waveform-compact" aria-hidden="true"><i style="height:8px;animation-delay:0ms"></i><i style="height:15px;animation-delay:55ms"></i><i style="height:24px;animation-delay:110ms"></i><i style="height:13px;animation-delay:165ms"></i><i style="height:31px;animation-delay:220ms"></i><i style="height:18px;animation-delay:275ms"></i><i style="height:38px;animation-delay:330ms"></i><i style="height:21px;animation-delay:385ms"></i><i style="height:29px;animation-delay:440ms"></i><i style="height:12px;animation-delay:495ms"></i><i style="height:24px;animation-delay:550ms"></i><i style="height:35px;animation-delay:605ms"></i><i style="height:17px;animation-delay:660ms"></i><i style="height:28px;animation-delay:715ms"></i><i style="height:10px;animation-delay:770ms"></i><i style="height:20px;animation-delay:825ms"></i><i style="height:31px;animation-delay:880ms"></i><i style="height:14px;animation-delay:935ms"></i><i style="height:25px;animation-delay:990ms"></i><i style="height:9px;animation-delay:1045ms"></i></span></div>
+```
+
+Dimensions:
+- top: 220px
+- left: 355px
+- width: 168px
+- height: 76px
+
+CSS:
+```css
+element { transform: translateY(-0.127468px) rotate(0.0979335deg); }
+* { box-sizing:border-box }
+.voice-pill { background:var(--paper);border:2px solid var(--ink);border-radius:50px;height:74px;padding:0 17px;position:relative;z-index:1 }
+.voice-pill, .waveform { align-items:center;display:flex;justify-content:center }
+.voice-trail .voice-pill { display:flex;flex:0 0 auto;width:168px;height:76px;border:2px solid rgba(24,24,23,.95);background:rgba(255,255,255,.25);box-shadow:inset 0 0 0 1px rgba(255,255,255,.45) }
+.voice-trail .voice-pill, .voice-trail .waveform { align-items:center;justify-content:center;border-radius:999px }
+
+/* Pseudo-elements */
+::selection { background:var(--lav) }
+
+/* Inherited */
+.voice-trail { white-space:nowrap }
+.hero { text-align:center }
+body { color:var(--ink); font-family:var(--sans); font-size:15px; line-height:1.45 }
+
+/* Resolved values */
+padding: 0px 17px;
+border-radius: 999px;
+border: 1.6px solid rgba(24, 24, 23, 0.95);
+align-items: center;
+background-attachment: scroll;
+background-clip: border-box;
+background-color: rgba(255, 255, 255, 0.25);
+background-image: none;
+background-origin: padding-box;
+background-position-x: 0%;
+background-position-y: 0%;
+background-repeat: repeat;
+background-size: auto;
+box-shadow: rgba(255, 255, 255, 0.45) 0px 0px 0px 1px inset;
+box-sizing: border-box;
+color: rgb(24, 24, 23);
+display: flex;
+flex-basis: auto;
+flex-grow: 0;
+flex-shrink: 0;
+font-family: "DM Sans", Arial, sans-serif;
+font-size: 15px;
+height: 76px;
+justify-content: center;
+line-height: 21.75px;
+position: relative;
+text-align: center;
+transform: matrix(0.999999, 0.00144685, -0.00144685, 0.999999, 0, -0.108099);
+unicode-bidi: isolate /*UA*/;
+width: 168px;
+z-index: 1;
+
+/* CSS variables */
+--paper: #fffef5;
+--lav: #e7d1fb;
+--sans: "DM Sans",Arial,sans-serif;
+--ink: #181817;
+```

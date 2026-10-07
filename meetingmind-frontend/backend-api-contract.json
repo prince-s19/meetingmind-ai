@@ -1,0 +1,120 @@
+{
+  "baseUrl": "https://your-render-backend.onrender.com",
+  "authentication": {
+    "type": "bearer_jwt",
+    "header": "Authorization: Bearer <token>",
+    "storage": {
+      "tokenKey": "meetingmind_token",
+      "userKey": "meetingmind_user"
+    }
+  },
+  "routes": [
+    {
+      "name": "Login",
+      "method": "POST",
+      "path": "/api/auth/login",
+      "authRequired": false,
+      "request": { "email": "string", "password": "string" },
+      "response": { "token": "string", "user": { "id": "string", "name": "string", "email": "string" } }
+    },
+    {
+      "name": "Register",
+      "method": "POST",
+      "path": "/api/auth/register",
+      "authRequired": false,
+      "request": { "name": "string", "email": "string", "password": "string" },
+      "response": { "token": "string", "user": { "id": "string", "name": "string", "email": "string" } }
+    },
+    {
+      "name": "GoogleAuth",
+      "method": "POST",
+      "path": "/api/auth/google",
+      "authRequired": false,
+      "request": { "code": "string" },
+      "response": { "token": "string", "user": { "id": "string", "name": "string", "email": "string" } }
+    },
+    {
+      "name": "DashboardStats",
+      "method": "GET",
+      "path": "/api/dashboard/stats",
+      "authRequired": true,
+      "response": { "totalMeetings": 12, "totalTasks": 40, "completedTasks": 18, "avgTasks": 3.3, "averageTasks": 3.3 }
+    },
+    {
+      "name": "DashboardMeetings",
+      "method": "GET",
+      "path": "/api/dashboard/meetings",
+      "authRequired": true,
+      "query": { "limit": 20, "skip": 0 },
+      "response": { "meetings": [ { "id": "meeting_id", "title": "Project sync", "summary": "Summary text", "status": "ready", "createdAt": "2026-09-24T00:00:00.000Z", "actionItems": [ { "task": "Finalize Q3 roadmap", "owner": "Aisha", "deadline": "2026-09-30", "concreteDeadline": "2026-09-30", "urgency": "High", "priority": "HIGH", "status": "open", "needsClarification": false } ] } ] }
+    },
+    {
+      "name": "DeleteMeeting",
+      "method": "DELETE",
+      "path": "/api/dashboard/:meetingId",
+      "authRequired": true,
+      "response": { "success": true, "message": "Meeting deleted" }
+    },
+    {
+      "name": "UploadTranscript",
+      "method": "POST",
+      "path": "/api/upload",
+      "authRequired": true,
+      "request": { "file": "multipart/form-data", "userPrompt": "optional string" },
+      "response": { "meetingId": "meeting_id" }
+    },
+    {
+      "name": "GetMeetingById",
+      "method": "GET",
+      "path": "/api/extract/:meetingId",
+      "authRequired": true,
+      "response": { "id": "meeting_id", "title": "Project sync", "summary": "Summary of the meeting", "status": "ready", "createdAt": "2026-09-24T00:00:00.000Z", "actionItems": [ { "task": "Finalize roadmap", "owner": "Aisha", "deadline": "2026-09-30", "concreteDeadline": "2026-09-30", "urgency": "High", "priority": "HIGH", "status": "open", "needsClarification": false } ] }
+    },
+    {
+      "name": "UpdateTask",
+      "method": "PATCH",
+      "path": "/api/extract/:meetingId/tasks/:taskIndex",
+      "authRequired": true,
+      "request": { "owner": "string", "deadline": "YYYY-MM-DD", "urgency": "High|Medium|Low", "priority": "HIGH|MEDIUM|LOW", "status": "open|completed" },
+      "response": { "id": "meeting_id", "actionItems": [] }
+    },
+    {
+      "name": "DeleteTask",
+      "method": "DELETE",
+      "path": "/api/extract/:meetingId/tasks/:taskIndex",
+      "authRequired": true,
+      "response": { "success": true, "message": "Task deleted" }
+    },
+    {
+      "name": "GetClarifications",
+      "method": "GET",
+      "path": "/api/clarify/:meetingId",
+      "authRequired": true,
+      "response": [ { "taskIndex": 0, "question": "Who owns this task and when should it be complete?", "task": { "task": "Finalize roadmap", "owner": "", "deadline": "", "status": "open", "needsClarification": true } } ]
+    },
+    {
+      "name": "AnswerClarification",
+      "method": "POST",
+      "path": "/api/clarify/:meetingId",
+      "authRequired": true,
+      "request": { "taskIndex": 0, "answer": "Aisha will complete this by Friday." },
+      "response": { "id": "meeting_id", "actionItems": [] }
+    },
+    {
+      "name": "GoogleSyncMeeting",
+      "method": "POST",
+      "path": "/api/google/sync/:meetingId",
+      "authRequired": true,
+      "response": { "authorizationUrl": "https://accounts.google.com/...", "message": "optional success message" }
+    },
+    {
+      "name": "GoogleAuthorizeUser",
+      "method": "POST",
+      "path": "/api/google/oauth/authorize",
+      "authRequired": true,
+      "request": { "userId": "string" },
+      "response": { "authorizationUrl": "https://accounts.google.com/..." }
+    }
+  ],
+  "errorResponse": { "message": "Something went wrong. Please try again.", "error": "Optional detailed backend error", "success": false }
+}
