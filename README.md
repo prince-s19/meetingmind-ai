@@ -2,6 +2,8 @@
 
 **Turn meeting transcripts into summaries, action items, confirmed owners, and calendar-synced tasks.**
 
+<img width="1774" height="887" alt="MeetingMind AI_ Turn Meetings Into Action" src="https://github.com/user-attachments/assets/e8b052cf-1f26-4820-b76c-00d724d3fcc6" />
+
 | | |
 |---|---|
 | **Live app** | https://meetingmind-frontend.vercel.app |
